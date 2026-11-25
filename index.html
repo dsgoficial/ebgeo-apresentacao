@@ -52,9 +52,9 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #000; curs
 #c0 .cota small { display: block; margin-top: 16px; font: 400 28px/1.2 var(--texto); color: var(--claro); }
 #c0.p1 .cota { opacity: 1; }
 #c0.p2 .cota, #c0.p2 .data { opacity: 0; transition-delay: 0s; }
-#c0 .frase { left: 0; right: 0; text-align: center; font: 700 132px/1 var(--titulo); }
-#c0 .f1 { top: 372px; }
-#c0 .f2 { top: 536px; color: var(--ouro); }
+#c0 .frase { left: 0; right: 0; text-align: center; font: 700 112px/1 var(--titulo); white-space: nowrap; }
+#c0 .f1 { top: 396px; }
+#c0 .f2 { top: 540px; color: var(--ouro); }
 #c0.p2 .f1, #c0.p3 .f2 { opacity: 1; transform: none; filter: none; }
 
 /* ---------- Vitrine: uma janela com a imagem real, e o nome do que se vê ao lado ---------- */
@@ -83,13 +83,13 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #000; curs
 .vitrine.grade .leg { opacity: 1; transition-delay: .7s; }
 
 /* ---------- Cena 1: o problema ---------- */
-#c1 .mas { left: 120px; top: 566px; font: 700 88px/1.04 var(--titulo); color: var(--ouro); white-space: nowrap; }
+#c1 .mas { left: 120px; top: 590px; font: 700 100px/1.04 var(--titulo); color: var(--ouro); white-space: nowrap; }
 #c1.grade .mas { opacity: 1; transform: none; filter: none; transition-delay: .5s; }
-#c1 .faltas { left: 120px; top: 806px; width: 1680px; list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
-#c1 .faltas li { display: grid; grid-template-columns: 76px 1fr; column-gap: 22px; align-items: start; font: 400 38px/1.2 var(--texto); color: var(--claro); opacity: 0; transform: translateX(-40px); transition: opacity .8s var(--suave), transform .8s var(--suave); }
+#c1 .faltas { left: 120px; top: 762px; width: 1680px; list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 70px; }
+#c1 .faltas li { display: grid; grid-template-columns: 76px 1fr; column-gap: 26px; align-items: start; font: 400 46px/1.22 var(--texto); color: var(--claro); opacity: 0; transform: translateX(-40px); transition: opacity .8s var(--suave), transform .8s var(--suave); }
 #c1 .faltas svg { width: 76px; height: 76px; }
 #c1 .faltas b { font-weight: 600; color: #fff; }
-#c1.p5 .faltas li:nth-child(1), #c1.p6 .faltas li:nth-child(2), #c1.p7 .faltas li:nth-child(3) { opacity: 1; transform: none; }
+#c1.p5 .faltas li:nth-child(1), #c1.p6 .faltas li:nth-child(2) { opacity: 1; transform: none; }
 
 /* ---------- Cena 2: a revelação ---------- */
 #c2 .fio { left: 50%; top: 610px; width: 0; height: 6px; margin-left: 0; background: var(--ouro); transition: width 1.4s var(--suave), margin-left 1.4s var(--suave), opacity .8s; }
@@ -186,14 +186,11 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #000; curs
 #c11 .agua { inset: 0; width: 1920px; height: 1080px; object-fit: cover; filter: brightness(.36) saturate(.6); }
 #c11 .antes { left: 0; right: 0; top: 300px; text-align: center; font: 700 86px/1.1 var(--titulo); transition-delay: .6s; }
 #c11.ativa .antes { opacity: 1; transform: none; filter: none; }
-#c11.p1 .antes { opacity: 0; transition-delay: 0s; }
-#c11 .perguntas { left: 0; right: 0; top: 232px; text-align: center; font: 700 98px/1.14 var(--titulo); }
-#c11.p1 .perguntas { opacity: 1; transform: none; filter: none; }
-#c11 .agora { left: 0; right: 0; top: 636px; text-align: center; font: 800 176px/1 var(--titulo); color: var(--ouro); }
-#c11.p2 .agora { opacity: 1; transform: none; filter: none; }
+#c11 .agora { left: 0; right: 0; top: 548px; text-align: center; font: 800 200px/1 var(--titulo); color: var(--ouro); }
+#c11.p1 .agora { opacity: 1; transform: none; filter: none; }
 .fim { inset: 0; opacity: 0; transition: opacity 1.4s ease; }
-#c11.p3 .fim { opacity: 1; }
-#c11.p3 .antes, #c11.p3 .agora, #c11.p3 .perguntas { opacity: 0; transition-delay: 0s; }
+#c11.p2 .fim { opacity: 1; }
+#c11.p2 .antes, #c11.p2 .agora { opacity: 0; transition-delay: 0s; }
 .fim .marca { top: 150px; }
 .fim .marca img { width: 230px; height: 230px; }
 .fim .marca b { font-size: 210px; }
@@ -227,15 +224,15 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #000; curs
     <div class="data">Maio de 2024</div>
     <div class="local">Rio Grande do Sul · Operação Taquari 2</div>
     <div class="cota"><span class="rotulo">Cota da água</span><b>1,9 m</b><small>Simulação de inundação em Porto Alegre, no EBGeo</small></div>
-    <div class="frase f1 surge">A geoinformação existia.</div>
-    <div class="frase f2 surge">Mas não chegava a quem decide.</div>
+    <div class="frase f1 surge">O terreno mudava a cada dia.</div>
+    <div class="frase f2 surge">A carta impressa não acompanhava.</div>
   </section>
 
   <!-- Cena 1: o problema. Os quatro produtos em movimento, um por passo; depois, o que faltava. -->
-  <section class="cena cab vitrine" id="c1" data-passos="7" data-grade="4">
+  <section class="cena cab vitrine" id="c1" data-passos="6" data-grade="4">
     <div class="fundo-verde"></div><svg class="relevo" viewBox="0 0 1920 1080" aria-hidden="true"></svg>
     <div class="rotulo">O problema</div>
-    <div class="titulo">O Exército já produzia a geoinformação.</div>
+    <div class="titulo">O Exército já tinha a capacidade de produzir.</div>
     <div class="prod pr0"><video data-midia="prod-carta.mp4" muted loop playsinline preload="auto"></video></div>
     <div class="prod pr1"><video data-midia="prod-orto.mp4" muted loop playsinline preload="auto"></video></div>
     <div class="prod pr2"><video data-midia="prod-3d.mp4" muted loop playsinline preload="auto"></video></div>
@@ -246,10 +243,9 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #000; curs
     <div class="nome n3"><i>4 de 4</i><b>Fotografia 360°</b><small>O local visto do chão.</small></div>
     <div class="real">Gravação real da tela do EBGeo</div>
     <div class="leg l0">Carta topográfica</div><div class="leg l1">Ortoimagem de SARP</div><div class="leg l2">Modelo 3D</div><div class="leg l3">Fotografia 360°</div>
-    <div class="mas surge">Faltava o meio de levá-la<br>a quem planeja e conduz as operações.</div>
+    <div class="mas surge">Faltava a plataforma para disseminar.</div>
     <ul class="faltas">
-      <li><svg viewBox="0 0 62 62" fill="none" stroke="#ff6b6b" stroke-width="6" stroke-linecap="round"><circle cx="31" cy="31" r="27"/><path d="M21 21 L41 41 M41 21 L21 41"/></svg><span><b>Não havia meio próprio</b> para distribuir e analisar o acervo.</span></li>
-      <li><svg viewBox="0 0 62 62" fill="none" stroke="#ff6b6b" stroke-width="6" stroke-linecap="round"><circle cx="31" cy="31" r="27"/><path d="M21 21 L41 41 M41 21 L21 41"/></svg><span>O programa de uso geral <b>abre vazio</b>, sem a simbologia militar.</span></li>
+      <li><svg viewBox="0 0 62 62" fill="none" stroke="#ff6b6b" stroke-width="6" stroke-linecap="round"><circle cx="31" cy="31" r="27"/><path d="M21 21 L41 41 M41 21 L21 41"/></svg><span>O programa de uso geral <b>abre vazio</b>: sem imagens, sem terreno, sem vetores e sem a simbologia militar.</span></li>
       <li><svg viewBox="0 0 62 62" fill="none" stroke="#ff6b6b" stroke-width="6" stroke-linecap="round"><circle cx="31" cy="31" r="27"/><path d="M21 21 L41 41 M41 21 L21 41"/></svg><span>A alternativa comercial é <b>cara</b> e de <b>fornecedor estrangeiro</b>.</span></li>
     </ul>
   </section>
@@ -438,12 +434,11 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #000; curs
   </section>
 
   <!-- Cena 11: o fecho -->
-  <section class="cena" id="c11" data-passos="3">
+  <section class="cena" id="c11" data-passos="2">
     <img class="agua" data-midia="poa-17.jpg" alt="">
     <div class="vinheta"></div>
-    <div class="antes surge">Em maio de 2024, a geoinformação<br>não chegava a quem decide.</div>
-    <div class="perguntas surge">O que vai alagar?<br>O que já alagou?<br>Por onde ainda se passa?</div>
-    <div class="agora surge">Agora, numa tela só.</div>
+    <div class="antes surge">Em maio de 2024,<br>faltava a plataforma.</div>
+    <div class="agora surge">Agora ela existe.</div>
     <div class="fim">
       <div class="fundo-verde"></div><svg class="relevo" viewBox="0 0 1920 1080" aria-hidden="true"></svg>
       <div class="marca"><img data-midia="marca-ebgeo.png" alt=""><b>EBGeo</b></div>
