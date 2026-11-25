@@ -203,6 +203,16 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #000; curs
 .fim .contato { left: 0; right: 0; top: 790px; text-align: center; font: 400 34px/1.2 var(--texto); color: var(--linha); }
 .fim .assina { left: 50%; top: 908px; transform: translateX(-50%); }
 
+/* ---------- Importar e exportar: dois quadros, o que entra e o que sai ---------- */
+#ci .troca { top: 262px; width: 800px; padding: 34px 48px 42px; border-radius: 22px; background: rgba(4, 28, 14, .42); border: 2px solid rgba(187, 247, 208, .28); }
+#ci .entra { left: 96px; }
+#ci .sai { left: 1024px; }
+#ci .troca h3 { margin-bottom: 26px; font: 800 84px/1 var(--titulo); color: var(--ouro); }
+#ci .troca ul { list-style: none; }
+#ci .troca li { font: 700 54px/1.55 var(--titulo); white-space: nowrap; }
+#ci .troca li small { margin-left: 14px; font: 400 34px/1 var(--texto); color: var(--linha); }
+#ci.p1 .entra, #ci.p2 .sai { opacity: 1; transform: none; filter: none; }
+
 /* Barra de progresso e ajuda */
 #barra { position: absolute; left: 0; bottom: 0; height: 5px; width: 0; background: var(--ouro); opacity: .85; transition: width .6s var(--suave); z-index: 9; }
 #ajuda { position: absolute; right: 26px; bottom: 20px; font: 400 20px/1 var(--texto); color: rgba(255, 255, 255, .5); z-index: 9; transition: opacity 1s; }
@@ -283,6 +293,18 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #000; curs
     <div class="real">Imagem real do EBGeo, quadro a quadro</div>
   </section>
 
+  <!-- Busca e extrair do mapa base -->
+  <section class="cena cab vitrine" id="cb" data-passos="1">
+    <div class="fundo-verde"></div><svg class="relevo" viewBox="0 0 1920 1080" aria-hidden="true"></svg>
+    <div class="rotulo">A base</div>
+    <div class="titulo">Na base, tudo se acha e se aproveita.</div>
+    <div class="prod pr0"><video data-midia="base-busca.mp4" muted loop playsinline preload="auto"></video></div>
+    <div class="prod pr1"><video data-midia="base-extrair.mp4" muted loop playsinline preload="auto"></video></div>
+    <div class="nome n0"><i>1 de 2</i><b>Busca</b><small>O endereço com o número, o lugar ou a feição, numa caixa só.</small></div>
+    <div class="nome n1"><i>2 de 2</i><b>Extrair do mapa base</b><small>A estrada ou o rio viram feição do calco com um clique.</small></div>
+    <div class="real">Gravação real da tela do EBGeo</div>
+  </section>
+
   <!-- Cena 4: planejar -->
   <section class="cena cab vitrine" id="c4" data-passos="3">
     <div class="fundo-verde"></div><svg class="relevo" viewBox="0 0 1920 1080" aria-hidden="true"></svg>
@@ -312,7 +334,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #000; curs
     <div class="prod pr5"><video data-midia="an-fogos.mp4" muted loop playsinline preload="auto"></video></div>
     <div class="prod pr6"><video data-midia="an-qbrn.mp4" muted loop playsinline preload="auto"></video></div>
     <div class="prod pr7"><video data-midia="an-inundacao.mp4" muted loop playsinline preload="auto"></video></div>
-    <div class="nome n0"><i>1 de 8</i><b>Visibilidade</b><small>De onde eu vejo, e de onde sou visto, com o perfil do terreno.</small></div>
+    <div class="nome n0"><i>1 de 8</i><b>Visibilidade</b><small>De onde eu vejo, e de onde sou visto.</small></div>
     <div class="nome n1"><i>2 de 8</i><b>Linha de visada</b><small>Vejo o alvo daqui? Dois cliques, e o perfil responde.</small></div>
     <div class="nome n2"><i>3 de 8</i><b>Rota</b><small>O caminho pela malha viária, com a distância e o tempo.</small></div>
     <div class="nome n3"><i>4 de 8</i><b>Cobertura de rádio</b><small>Até onde o rádio de uma estação alcança, com o relevo.</small></div>
@@ -327,6 +349,18 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #000; curs
     <div class="padrao surge">Valores padrão por escalão e por armamento:<br>quem começa aplica direto, quem tem experiência ajusta.</div>
   </section>
 
+  <!-- Horizonte e sobrevoo -->
+  <section class="cena cab vitrine" id="ch" data-passos="1">
+    <div class="fundo-verde"></div><svg class="relevo" viewBox="0 0 1920 1080" aria-hidden="true"></svg>
+    <div class="rotulo">O que se faz · Reconhecer</div>
+    <div class="titulo">O terreno, como do chão.</div>
+    <div class="prod pr0"><video data-midia="rec-horizonte.mp4" muted loop playsinline preload="auto"></video></div>
+    <div class="prod pr1"><video data-midia="rec-sobrevoo.mp4" muted loop playsinline preload="auto"></video></div>
+    <div class="nome n0"><i>1 de 2</i><b>Horizonte</b><small>O que se vê em volta, a partir de qualquer ponto do mapa.</small></div>
+    <div class="nome n1"><i>2 de 2</i><b>Sobrevoo do itinerário</b><small>A câmera percorre o eixo sobre o relevo, antes da tropa.</small></div>
+    <div class="real">Gravação real da tela do EBGeo</div>
+  </section>
+
   <!-- Cena 6: apresentar -->
   <section class="cena cab vitrine" id="c6" data-passos="1">
     <div class="fundo-verde"></div><svg class="relevo" viewBox="0 0 1920 1080" aria-hidden="true"></svg>
@@ -335,18 +369,29 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #000; curs
     <div class="prod pr0"><video data-midia="apres-tempo.mp4" muted loop playsinline preload="auto"></video></div>
     <div class="prod pr1"><video data-midia="apres-carta.mp4" muted loop playsinline preload="auto"></video></div>
     <div class="nome n0"><i>1 de 2</i><b>A manobra no tempo</b><small>O calco evolui slide a slide, sem juntar arquivos. No exemplo, a Batalha de Tuiuti, de 1866.</small></div>
-    <div class="nome n1"><i>2 de 2</i><b>Carta para imprimir</b><small>O mesmo mapa vira folha em PDF, com o calco, o norte, a escala e a legenda.</small></div>
+    <div class="nome n1"><i>2 de 2</i><b>Carta para imprimir</b><small>O mesmo mapa vira folha em PDF, com o calco, a grade de coordenadas, o norte e a escala.</small></div>
     <div class="real">Gravação real da tela do EBGeo</div>
   </section>
 
+  <!-- Importar e exportar -->
+  <section class="cena cab" id="ci" data-passos="2">
+    <div class="fundo-verde"></div><svg class="relevo" viewBox="0 0 1920 1080" aria-hidden="true"></svg>
+    <div class="rotulo">Com outros programas</div>
+    <div class="titulo">Conversa com o que a tropa já usa.</div>
+    <div class="troca entra surge"><h3>Importa</h3><ul><li>Google Earth<small>KML e KMZ</small></li><li>Shapefile e GeoJSON</li><li>Trilhas de GPS<small>GPX</small></li><li>Planilhas de coordenadas<small>CSV</small></li></ul></div>
+    <div class="troca sai surge"><h3>Exporta</h3><ul><li>Google Earth<small>KMZ</small></li><li>GPS Garmin</li><li>PDF georreferenciado</li><li>Imagem</li></ul></div>
+  </section>
+
   <!-- Cena 7: atualizar -->
-  <section class="cena cab vitrine" id="c7" data-passos="0">
+  <section class="cena cab vitrine" id="c7" data-passos="1">
     <div class="fundo-verde"></div><svg class="relevo" viewBox="0 0 1920 1080" aria-hidden="true"></svg>
     <div class="rotulo">O que se faz · Atualizar</div>
     <div class="titulo">A base se renova com o que a tropa vê.</div>
     <div class="prod pr0"><video data-midia="atual-sarp.mp4" muted loop playsinline preload="auto"></video></div>
-    <div class="nome n0"><b>Do campo e do SARP</b><small>O militar em reconhecimento confirma a via e a ponte. O vídeo de SARP, projetado no mapa com detecção de objetos, atualiza a base de todos.</small></div>
-    <div class="real">Imagem real do EBGeo</div>
+    <div class="prod pr1"><video data-midia="atual-cameras.mp4" muted loop playsinline preload="auto"></video></div>
+    <div class="nome n0"><i>1 de 2</i><b>Do campo e do SARP</b><small>O militar em reconhecimento confirma a via e a ponte. O vídeo de SARP, projetado no mapa com detecção de objetos, atualiza a base de todos.</small></div>
+    <div class="nome n1"><i>2 de 2</i><b>Câmeras ao vivo</b><small>Várias ao mesmo tempo, cada uma com o lugar e o campo de visão no mapa. No exemplo, Foz do Iguaçu.</small></div>
+    <div class="real">Gravação real da tela do EBGeo</div>
   </section>
 
   <!-- Cena 8: para cada emprego -->
